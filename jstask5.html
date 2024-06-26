@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        .borderred{
+            border-style: solid;
+            border-color: red;
+        }
+        .parastyle{
+            color:red
+        }
+    </style>
+
+</head>
+<body>
+    <div id="whole"></div>
+</body>
+<script>
+    
+
+    let wholediv = document.getElementById("whole");
+    wholediv.classList.add('d-flex','flex-column','justify-content-center','align-items-center')
+    
+    
+    let forml = document.createElement('form')
+    forml.setAttribute('id','theform')
+    wholediv.appendChild(forml)
+    forml.classList.add('d-flex', 'flex-column')
+
+    let insideformdivone = document.createElement('div')
+    insideformdivone.classList.add('d-flex','flex-row','mb-3')
+    forml.appendChild(insideformdivone)
+
+    let thelabel = document.createElement('label')
+    thelabel.textContent = "Name"
+    thelabel.setAttribute('for','thelabelone')
+    insideformdivone.appendChild(thelabel)
+
+    let theinput = document.createElement('input')
+    theinput.setAttribute('id','thelabelone')
+    theinput.setAttribute('type','text')
+    theinput.addEventListener('blur',myoneblur)
+    insideformdivone.appendChild(theinput)
+
+    let paraone = document.createElement('p')
+    paraone.textContent = "This feild is required"
+    paraone.classList.add('parastyle')
+    paraone.style.display = 'none'
+    insideformdivone.appendChild(paraone)
+
+    function myoneblur(){
+        const theinputlen = theinput.value.length === 0
+
+        if(theinputlen === true){
+            paraone.style.display = 'block'
+            theinput.classList.add('borderred')
+        }else{
+            paraone.style.display = 'none'
+            theinput.classList.remove('borderred')
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+    let insideformdivtwo = document.createElement('div')
+    insideformdivtwo.classList.add('d-flex','flex-row','mb-3')
+    forml.appendChild(insideformdivtwo)
+
+
+    let thelabeltwo = document.createElement('label')
+    thelabeltwo.textContent = "Email"
+    thelabeltwo.setAttribute('for','thelabeltwo')
+    insideformdivtwo.appendChild(thelabeltwo)
+
+    let theinputtwo = document.createElement('input')
+    theinputtwo.setAttribute('id','thelabeltwo')
+    theinputtwo.addEventListener('blur', mytwoblur)
+    theinputtwo.setAttribute('type','text')
+    insideformdivtwo.appendChild(theinputtwo)
+
+    let paratwo = document.createElement('p')
+    paratwo.textContent = "A valid email is required"
+    paratwo.classList.add('parastyle')
+    paratwo.style.display = 'none'
+    insideformdivtwo.appendChild(paratwo)
+
+    function mytwoblur(){
+        const theinputlentwo = theinputtwo.value.length === 0
+
+        if(theinputlentwo === true){
+            paratwo.style.display = 'block'
+            theinputtwo.classList.add('borderred')
+        }else{
+            paratwo.style.display = 'none'
+            theinputtwo.classList.remove('borderred')
+        }
+    }
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+    let insideformdivthree = document.createElement('div')
+    insideformdivthree.classList.add('d-flex','flex-row','mb-3')
+    forml.appendChild(insideformdivthree)
+
+
+
+    let thelabelthree = document.createElement('label')
+    thelabelthree .textContent = "Website"
+    thelabelthree .setAttribute('for','thelabelthree')
+    insideformdivthree.appendChild(thelabelthree )
+
+    let theinputthree = document.createElement('input')
+    theinputthree.setAttribute('id','thelabelthree')
+    theinputthree.setAttribute('type','text')
+    theinputthree.addEventListener('blur', mythreeblur)
+    insideformdivthree.appendChild(theinputthree)
+
+    let parathree = document.createElement('p')
+    parathree.textContent = "A valid website is required"
+    parathree.classList.add('parastyle')
+    parathree.style.display = 'none'
+    insideformdivthree.appendChild(parathree)
+
+    function mythreeblur(){
+        const theinputlenthree = theinputthree.value.length === 0
+
+        if(theinputlenthree === true){
+            parathree.style.display = 'block'
+            theinputthree.classList.add('borderred')
+        }else{
+            parathree.style.display = 'none'
+            theinputthree.classList.remove('borderred')
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    let insideformdivfour = document.createElement('div')
+    insideformdivfour.classList.add('d-flex','flex-row','mb-3')
+    forml.appendChild(insideformdivfour)
+
+
+    let thelabelfour = document.createElement('label')
+    thelabelfour.textContent = "Message"
+    thelabelfour.setAttribute('for','thelabelfour')
+    insideformdivfour.appendChild(thelabelfour)
+
+    let theinputfour = document.createElement('textarea')
+    theinputfour.setAttribute('id','thelabelfour')
+    theinputfour.addEventListener('blur', myfourblur)
+    insideformdivfour.appendChild(theinputfour)
+
+    let parafour = document.createElement('p')
+    parafour.textContent = "field is required"
+    parafour.classList.add('parastyle')
+    parafour.style.display = 'none'
+    insideformdivfour.appendChild(parafour)
+
+    
+    function myfourblur(){
+        const theinputlenfour = theinputfour.value.length === 0
+
+        if(theinputlenfour === true){
+            parafour.style.display = 'block'
+            theinputfour.classList.add('borderred')
+        }else{
+            parafour.style.display = 'none'
+            theinputfour.classList.remove('borderred')
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    let buttontwo = document.createElement("button");
+buttontwo.classList.add('btn', 'btn-danger');
+buttontwo.textContent = "Submit";
+buttontwo.setAttribute('type', 'button');  
+wholediv.appendChild(buttontwo);
+
+buttontwo.addEventListener('click', function() {
+    
+    if (theinput.value.length === 0) {
+        paraone.style.display = 'block';
+        theinput.classList.add('borderred');
+    } else {
+        paraone.style.display = 'none';
+        theinput.classList.remove('borderred');
+    }
+
+    
+    if (theinputtwo.value.length === 0) {
+        paratwo.style.display = 'block';
+        theinputtwo.classList.add('borderred');
+    } else {
+        paratwo.style.display = 'none';
+        theinputtwo.classList.remove('borderred');
+    }
+
+    
+    if (theinputthree.value.length === 0) {
+        parathree.style.display = 'block';
+        theinputthree.classList.add('borderred');
+    } else {
+        parathree.style.display = 'none';
+        theinputthree.classList.remove('borderred');
+    }
+
+    
+    if (theinputfour.value.length === 0) {
+        parafour.style.display = 'block';
+        theinputfour.classList.add('borderred');
+    } else {
+        parafour.style.display = 'none';
+        theinputfour.classList.remove('borderred');
+    }
+});
+
+
+
+
+    
+
+    
+
+</script>
+</html>

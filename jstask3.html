@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+    <div id="whole">
+
+    </div>
+</body>
+<script>
+    let wholediv = document.getElementById("whole");
+    wholediv.classList.add('d-flex','flex-column','justify-content-center','align-items-center')
+    let forml = document.createElement('form')
+    forml.setAttribute('id','theform')
+    wholediv.appendChild(forml)
+
+    let thelabel = document.createElement('label')
+    thelabel.textContent = "1st Number"
+    thelabel.setAttribute('for','thelabelone')
+    forml.appendChild(thelabel)
+
+    let theinput = document.createElement('input')
+    theinput.setAttribute('id','thelabelone')
+    theinput.setAttribute('type','number')
+    forml.appendChild(theinput)
+
+
+    let thelabeltwo = document.createElement('label')
+    thelabeltwo.textContent = "2nd Number"
+    thelabeltwo.setAttribute('for','thelabeltwo')
+    forml.appendChild(thelabeltwo)
+
+    let theinputtwo = document.createElement('input')
+    theinputtwo.setAttribute('id','thelabeltwo')
+    theinputtwo.setAttribute('type','number')
+    forml.appendChild(theinputtwo)
+
+    forml.classList.add('d-flex', 'flex-column')
+
+
+    function multiplyNumbers(event){
+        event.preventDefault();
+        let firstnumber = theinput.value
+        let secondnumber = theinputtwo.value
+
+        let resultu = firstnumber*secondnumber
+
+        let para = document.createElement('p')
+        para.textContent = resultu
+        forml.appendChild(para)
+
+
+    }
+
+    let thebutton = document.createElement('button')
+    thebutton.classList.add('btn','btn-primary','mt-3')
+    thebutton.textContent = "Multiply"
+    thebutton.addEventListener('click', multiplyNumbers);
+    forml.appendChild(thebutton)
+
+    function DivideNumbers(event){
+        event.preventDefault();
+        let firstnumber = theinput.value
+        let secondnumber = theinputtwo.value
+
+        let result = firstnumber/secondnumber
+
+        let parau = document.createElement('p')
+        parau.textContent = result
+        forml.appendChild(parau)
+
+
+    }
+
+
+    let thebuttontwo = document.createElement('button')
+    thebuttontwo.classList.add('btn','btn-primary','mt-3')
+    thebuttontwo.textContent = "Divide"
+    thebuttontwo.addEventListener('click', DivideNumbers);
+    forml.appendChild(thebuttontwo)
+
+    
+</script>
+</html>
